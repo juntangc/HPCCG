@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
 	if (ierr) cerr << "Error in call to CG: " << ierr << ".\n" << endl;
 
 #ifdef USING_MPI
-       double t4 = times[4];
+      double t4 = times[4];
       double t4min = 0.0;
       double t4max = 0.0;
       double t4avg = 0.0;
@@ -261,22 +261,22 @@ int main(int argc, char *argv[])
       doc.add("Parallelism","");
 
 #ifdef USING_MPI
-           doc.get("Parallelism")->add("Number of MPI ranks",size);
+          doc.get("Parallelism")->add("Number of MPI ranks",size);
 #else
-           doc.get("Parallelism")->add("MPI not enabled","");
+          doc.get("Parallelism")->add("MPI not enabled","");
 #endif
 
 #ifdef USING_OMP
-           int nthreads = 1;
+          int nthreads = 1;
 #pragma omp parallel
-           nthreads = omp_get_num_threads();
+          nthreads = omp_get_num_threads();
           doc.get("Parallelism")->add("Number of OpenMP threads",nthreads);
 #else
-           doc.get("Parallelism")->add("OpenMP not enabled","");
+          doc.get("Parallelism")->add("OpenMP not enabled","");
 #endif
 
       doc.add("Dimensions","");
- 	  doc.get("Dimensions")->add("nx",nx);
+	  doc.get("Dimensions")->add("nx",nx);
 	  doc.get("Dimensions")->add("ny",ny);
 	  doc.get("Dimensions")->add("nz",nz);
 
