@@ -88,6 +88,7 @@ int waxpby (const int n, const double alpha, const double * const x,
 #endif
     for (int i=0; i<n; i++) w[i] = alpha * x[i] + beta * y[i];
   }
+
 #endif
   return(0);
 }
